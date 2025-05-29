@@ -1,4 +1,4 @@
 streamlit
 pandas
 matplotlib
-pycausalimpact
+pycausalimpact @ git+https://github.com/WillianFuks/causalimpact.git
