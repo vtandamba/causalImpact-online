@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-from causalimpact import CausalImpact
+from pycausalimpact import CausalImpact
+
 
 st.title("Analyse d'impact SEO (CausalImpact)")
 
