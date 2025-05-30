@@ -58,6 +58,7 @@ if uploaded_file is not None:
                     st.success(" Analyse effectuée avec succès")
                     st.text(ci.summary("report"))
 
+#
                     fig = ci.plot()
                     st.pyplot(fig)
 
