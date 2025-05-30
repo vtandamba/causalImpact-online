@@ -1,5 +1,7 @@
 streamlit
-pandas==1.5.3
-matplotlib==3.7.1
-causalimpact
-pycausalimpact @ git+https://github.com/WillianFuks/causalimpact.git
+pandas
+matplotlib
+scipy
+numpy
+cmdstanpy
+causalimpact @ git+https://github.com/WillianFuks/causalimpact.git
