@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from causalimpact import CausalImpact
+from pycausalimpact import CausalImpact
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Analyse Causale avec CausalImpact", layout="centered")
