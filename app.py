@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Analyse Causale avec CausalImpact", layout="centered")
 
-st.title("📈 Analyse Causale d'une série temporelle (CausalImpact)")
+st.title(" Analyse Causale d'une série temporelle (CausalImpact)")
 
 # Chargement du fichier CSV
 uploaded_file = st.file_uploader("Importer un fichier CSV", type="csv")
@@ -21,13 +21,13 @@ if uploaded_file is not None:
             df["date"] = pd.to_datetime(df["date"], format="%d.%m.%Y", errors="coerce")
             df = df.dropna(subset=["date"]).set_index("date").sort_index()
         else:
-            st.error("❌ La colonne 'date' est requise.")
+            st.error(" La colonne 'date' est requise.")
             st.stop()
 
         # Sélection de la colonne à analyser
         colonnes_numeriques = df.select_dtypes(include="number").columns.tolist()
         if not colonnes_numeriques:
-            st.error("❌ Aucune colonne numérique détectée.")
+            st.error(" Aucune colonne numérique détectée.")
             st.stop()
 
         variable = st.selectbox("Sélectionnez la variable à analyser :", colonnes_numeriques)
@@ -51,18 +51,18 @@ if uploaded_file is not None:
 
         if st.button("Lancer l’analyse causale"):
             if len(data.dropna()) < 10:
-                st.warning("⚠️ Pas assez de données pour faire une analyse fiable.")
+                st.warning(" Pas assez de données pour faire une analyse fiable.")
             else:
                 try:
                     ci = CausalImpact(data, pre_period, post_period)
-                    st.success("✅ Analyse effectuée avec succès")
+                    st.success(" Analyse effectuée avec succès")
                     st.text(ci.summary("report"))
 
                     fig = ci.plot()
                     st.pyplot(fig)
 
                 except Exception as e:
-                    st.error(f"❌ Une erreur s’est produite : {e}")
+                    st.error(f" Une erreur s’est produite : {e}")
 
     except Exception as e:
         st.error(f"Erreur lors de la lecture du fichier : {e}")
